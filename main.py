@@ -1,8 +1,11 @@
-# Import Libraries
+import sys
 
-from flask import Flask, request, jsonify
-import json
-import os
-import uuid
-from datetime import datetime
+from PySide6 import QtWidgets
+from main_window import MainWindow
 
+app = QtWidgets.QApplication(sys.argv)
+
+main_window = MainWindow()
+main_window.show()
+
+app.exec()
