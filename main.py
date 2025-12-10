@@ -1,5 +1,7 @@
 import sys
 import threading
+import os
+import signal
 
 from PySide6 import QtWidgets
 from main_window import MainWindow
@@ -9,10 +11,14 @@ from app import app as flask_app
 flask_thread = threading.Thread(target=lambda: flask_app.run(debug=False, port=5000), daemon=False)
 flask_thread.start()
 
-# Start PySide6 GUI
+class MainWindowWithExit(MainWindow):
+    def closeEvent(self, event):
+        # Kill backend (Flask) and exit frontend
+        os.kill(os.getpid(), signal.SIGTERM)
+
 app = QtWidgets.QApplication(sys.argv)
 
-main_window = MainWindow()
+main_window = MainWindowWithExit()
 main_window.show()
 
 res = app.exec()

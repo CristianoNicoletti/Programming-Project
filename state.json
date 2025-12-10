@@ -7,28 +7,36 @@
     "category": "book",
     "available_for_borrowing": false
   },
-  "812ca5c6-2541-4a40-9587-a3602ffa79b7": {
-    "id": "812ca5c6-2541-4a40-9587-a3602ffa79b7",
-    "name": "",
-    "author": "",
-    "publication_date": "Sat Jan 1 2000",
-    "category": "book",
-    "available_for_borrowing": false
-  },
   "7c32fe42-8088-4a09-b565-77cddfd28673": {
     "id": "7c32fe42-8088-4a09-b565-77cddfd28673",
     "name": "sdfsadasdasd",
     "author": "",
     "publication_date": "Sat Jan 1 2000",
     "category": "book",
-    "available_for_borrowing": false
+    "available_for_borrowing": true
   },
-  "fb266c0a-81c4-4469-99e9-f39ba75cde2a": {
-    "id": "fb266c0a-81c4-4469-99e9-f39ba75cde2a",
-    "name": "aaa",
+  "b08a185c-c83f-4725-9e14-edb562fc602d": {
+    "id": "b08a185c-c83f-4725-9e14-edb562fc602d",
+    "name": "bob",
     "author": "",
     "publication_date": "Sat Jan 1 2000",
     "category": "film",
     "available_for_borrowing": false
+  },
+  "7448a8f8-5094-4831-9eca-3c4f2b021360": {
+    "id": "7448a8f8-5094-4831-9eca-3c4f2b021360",
+    "name": "larry",
+    "author": "",
+    "publication_date": "Sat Jan 1 2000",
+    "category": "magazine",
+    "available_for_borrowing": false
+  },
+  "7acacbc0-ae62-4614-bbd0-40333bafe108": {
+    "id": "7acacbc0-ae62-4614-bbd0-40333bafe108",
+    "name": "aaa",
+    "author": "",
+    "publication_date": "Sat Jan 1 2000",
+    "category": "book",
+    "available_for_borrowing": true
   }
 }

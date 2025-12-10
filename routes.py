@@ -18,7 +18,9 @@ def register_routes(app):
             media = state.get_media_by_category(cat)
         else:
             media = state.get_all_media()
-        return jsonify({'media': media}), 200
+        # Only return available items
+        available_media = [m for m in media if m.get('available_for_borrowing')]
+        return jsonify({'media': available_media}), 200
 
     @app.route('/add_media', methods=['POST'])
     def add_media():
