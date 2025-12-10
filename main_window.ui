@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>794</width>
-    <height>561</height>
+    <width>805</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,61 +18,55 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>791</width>
+     <width>801</width>
      <height>561</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Browse</string>
     </attribute>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>741</width>
-       <height>501</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="filter_by_catergory_lbl">
-          <property name="text">
-           <string>Filter by Category</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="refresh_available_btn">
-          <property name="text">
-           <string>Refresh Available</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="browse_tab_verticallayout">
-        <item>
-         <widget class="QComboBox" name="filter_by_category_cmbx"/>
-        </item>
-        <item>
-         <widget class="QListView" name="available_lst">
-          <property name="cursor" stdset="0">
-           <cursorShape>IBeamCursor</cursorShape>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="filter_by_catergory_lbl">
+           <property name="text">
+            <string>Filter by Category</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="refresh_available_btn">
+           <property name="text">
+            <string>Refresh Available</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="browse_tab_verticallayout">
+         <item>
+          <widget class="QComboBox" name="filter_by_category_cmbx"/>
+         </item>
+         <item>
+          <widget class="QListView" name="available_lst">
+           <property name="cursor" stdset="0">
+            <cursorShape>IBeamCursor</cursorShape>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -247,6 +241,29 @@
        <widget class="QLineEdit" name="search_by_name_line_edit"/>
       </item>
      </layout>
+    </widget>
+    <widget class="QListWidget" name="search_result_list">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>741</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_btn">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>160</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
     </widget>
    </widget>
   </widget>

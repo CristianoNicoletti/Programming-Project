@@ -8,38 +8,40 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QMetaObject, QRect,
-    QTime, Qt)
-from PySide6.QtGui import (QCursor)
-from PySide6.QtWidgets import (QCheckBox, QComboBox, QDateEdit,
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
     QDateTimeEdit, QHBoxLayout, QLabel, QLineEdit,
-    QListView, QPushButton, QTabWidget,
-    QVBoxLayout, QWidget)
+    QListView, QListWidget, QListWidgetItem, QPushButton,
+    QSizePolicy, QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_main_window_widget(object):
     def setupUi(self, main_window_widget):
         if not main_window_widget.objectName():
             main_window_widget.setObjectName(u"main_window_widget")
-        main_window_widget.resize(794, 561)
+        main_window_widget.resize(805, 560)
         self.tab_widget = QTabWidget(main_window_widget)
         self.tab_widget.setObjectName(u"tab_widget")
-        self.tab_widget.setGeometry(QRect(0, 0, 791, 561))
+        self.tab_widget.setGeometry(QRect(0, 0, 801, 561))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
-        self.layoutWidget = QWidget(self.tab)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(20, 20, 741, 501))
-        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget)
+        self.horizontalLayout_4 = QHBoxLayout(self.tab)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.filter_by_catergory_lbl = QLabel(self.layoutWidget)
+        self.filter_by_catergory_lbl = QLabel(self.tab)
         self.filter_by_catergory_lbl.setObjectName(u"filter_by_catergory_lbl")
 
         self.horizontalLayout_2.addWidget(self.filter_by_catergory_lbl)
 
-        self.refresh_available_btn = QPushButton(self.layoutWidget)
+        self.refresh_available_btn = QPushButton(self.tab)
         self.refresh_available_btn.setObjectName(u"refresh_available_btn")
 
         self.horizontalLayout_2.addWidget(self.refresh_available_btn)
@@ -49,12 +51,12 @@ class Ui_main_window_widget(object):
 
         self.browse_tab_verticallayout = QVBoxLayout()
         self.browse_tab_verticallayout.setObjectName(u"browse_tab_verticallayout")
-        self.filter_by_category_cmbx = QComboBox(self.layoutWidget)
+        self.filter_by_category_cmbx = QComboBox(self.tab)
         self.filter_by_category_cmbx.setObjectName(u"filter_by_category_cmbx")
 
         self.browse_tab_verticallayout.addWidget(self.filter_by_category_cmbx)
 
-        self.available_lst = QListView(self.layoutWidget)
+        self.available_lst = QListView(self.tab)
         self.available_lst.setObjectName(u"available_lst")
         self.available_lst.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.IBeamCursor))
 
@@ -62,6 +64,9 @@ class Ui_main_window_widget(object):
 
 
         self.verticalLayout_2.addLayout(self.browse_tab_verticallayout)
+
+
+        self.horizontalLayout_4.addLayout(self.verticalLayout_2)
 
         self.tab_widget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -167,11 +172,17 @@ class Ui_main_window_widget(object):
 
         self.verticalLayout_3.addWidget(self.search_by_name_line_edit)
 
+        self.search_result_list = QListWidget(self.tab_3)
+        self.search_result_list.setObjectName(u"search_result_list")
+        self.search_result_list.setGeometry(QRect(20, 90, 741, 51))
+        self.delete_btn = QPushButton(self.tab_3)
+        self.delete_btn.setObjectName(u"delete_btn")
+        self.delete_btn.setGeometry(QRect(680, 160, 75, 24))
         self.tab_widget.addTab(self.tab_3, "")
 
         self.retranslateUi(main_window_widget)
 
-        self.tab_widget.setCurrentIndex(0)
+        self.tab_widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(main_window_widget)
@@ -196,6 +207,7 @@ class Ui_main_window_widget(object):
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tab_2), QCoreApplication.translate("main_window_widget", u"Add Media", None))
         self.search_by_name_lbl.setText(QCoreApplication.translate("main_window_widget", u"Search by Name:", None))
         self.search_btn.setText(QCoreApplication.translate("main_window_widget", u"Search", None))
+        self.delete_btn.setText(QCoreApplication.translate("main_window_widget", u"Delete", None))
         self.tab_widget.setTabText(self.tab_widget.indexOf(self.tab_3), QCoreApplication.translate("main_window_widget", u"Search", None))
     # retranslateUi
 
