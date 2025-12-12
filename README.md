@@ -30,28 +30,31 @@ This project is a Library Management System using a GUI built with PySide6 and a
 
 1. **Clone the repository**
 2. **Create and activate a virtual environment (optional but recommended):**
-	```
+
 	python -m venv my_venv
 	my_venv\Scripts\activate  # On Windows
-	```
+
+
 3. **Install dependencies:**
-	```
+
 	pip install -r requirements.txt
-	```
+
 
 ## Running the Application
 
 1. **Start the application:**
-	```
+	
 	python main.py
-	```
+	
 	This will launch the GUI and automatically start the Flask backend server.
 
+
 2. **Using the GUI:**
-	- Add new media items using the form
-	- Search for items by name
-	- Filter by category and view available items
+	- Add new media items using the "Add Media" tab
+	- Search for items by name on the "Search" tab
+	- Filter by category and view available items on the "Browse" tab
 	- Select and delete items as needed
+    - View any media items metadata by selecting it in either the search or browse tabs 
 
 ## Running Tests
 
