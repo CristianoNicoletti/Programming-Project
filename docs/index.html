@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System - Project Overview</title>
     <style>
+        /* Basic page styling */
         body {
             font-family: Arial, sans-serif;
             background: #f7f7f7;
             margin: 0;
             padding: 0;
         }
+        /* Container for the main content */
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -23,11 +25,13 @@
             color: #2c3e50;
             margin-bottom: 12px;
         }
+        /* Project description styling */
         .desc {
             font-size: 1.1em;
             color: #444;
             margin-bottom: 24px;
         }
+        /* Download button styling */
         .download {
             display: inline-block;
             background: #3498db;
@@ -42,6 +46,7 @@
         .download:hover {
             background: #217dbb;
         }
+        /* Screenshots section styling */
         .screenshots {
             display: block;
             margin-top: 24px;
@@ -55,7 +60,7 @@
         }
         .screenshot img {
             max-width: 100%;
-            max-height: 480px;
+            max-height: 600px;
             width: auto;
             height: auto;
             border-radius: 4px;
@@ -70,18 +75,26 @@
 </head>
 <body>
     <div class="container">
+        <!-- Project Title -->
         <h1>Library Management System</h1>
+        <!-- Project Description -->
         <div class="desc">
-            <!-- Write your project description here -->
             <p>
-                This project is a simple Library Management System featuring a graphical user interface (GUI) built with PySide6 (Qt for Python) and a backend RESTful API built with Flask. It allows users to add, search, view, and delete media items (books, films, magazines) in a persistent library database.
+                This project is a simple Library Management System featuring a graphical user interface (GUI) built with PySide6 (Qt for Python) and a backend RESTful API built with Flask. It allows users to add, search, view, and delete media items (books, films, magazines) in a persistent dictionary stored on a JSON file.
+            </p>
         </div>
-        <a class="download" href="https://drive.google.com/file/d/13QDfRLehhaied1UXWs3L1Os835te2MEl/view?usp=sharing">Download Project (ZIP)</a>
+        <!-- Link to GitHub repository for downloading the project -->
+        <a class="download" href="https://github.com/CristianoNicoletti/Programming-Project" target="_blank">
+            My project is available for download on my GitHub
+        </a>
+        <!-- Screenshots Section -->
         <div class="screenshots">
+            <!-- Frontend Screenshot -->
             <div class="screenshot">
                 <img src="Website/frontend_screenshot.png" alt="Frontend Screenshot">
                 <div class="caption">Frontend: PySide6 GUI</div>
             </div>
+            <!-- Backend Screenshot -->
             <div class="screenshot">
                 <img src="Website/backend_screenshot.png" alt="Backend Screenshot">
                 <div class="caption">Backend: Flask API in action</div>
