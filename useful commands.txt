@@ -2,7 +2,7 @@ python3 -m venv my_venv
 source my_venv/bin/activate
 pip install -r requirements.txt
 
-pyside6-uic main_window.ui > ui_main_window.pyside6
+pyside6-uic main_window.ui > ui_main_window.py
 
 C:/Users/CNicoletti/Documents/Programming-Project/my_venv/Scripts/activate.bat
 
