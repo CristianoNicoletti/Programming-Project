@@ -1,28 +1,4 @@
 {
-  "54926b98-06c8-49b0-acbd-0945121327c5": {
-    "id": "54926b98-06c8-49b0-acbd-0945121327c5",
-    "name": "sfasdfasdasdasdas",
-    "author": "",
-    "publication_date": "Sat Jan 1 2000",
-    "category": "book",
-    "available_for_borrowing": false
-  },
-  "7c32fe42-8088-4a09-b565-77cddfd28673": {
-    "id": "7c32fe42-8088-4a09-b565-77cddfd28673",
-    "name": "sdfsadasdasd",
-    "author": "",
-    "publication_date": "Sat Jan 1 2000",
-    "category": "book",
-    "available_for_borrowing": true
-  },
-  "b08a185c-c83f-4725-9e14-edb562fc602d": {
-    "id": "b08a185c-c83f-4725-9e14-edb562fc602d",
-    "name": "bob",
-    "author": "",
-    "publication_date": "Sat Jan 1 2000",
-    "category": "film",
-    "available_for_borrowing": false
-  },
   "7448a8f8-5094-4831-9eca-3c4f2b021360": {
     "id": "7448a8f8-5094-4831-9eca-3c4f2b021360",
     "name": "larry",
@@ -31,12 +7,52 @@
     "category": "magazine",
     "available_for_borrowing": false
   },
-  "7acacbc0-ae62-4614-bbd0-40333bafe108": {
-    "id": "7acacbc0-ae62-4614-bbd0-40333bafe108",
-    "name": "aaa",
-    "author": "",
-    "publication_date": "Sat Jan 1 2000",
+  "825e397b-f6b1-450d-954d-771cb6d9e336": {
+    "id": "825e397b-f6b1-450d-954d-771cb6d9e336",
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "publication_date": "Wed Sep 24 1997",
     "category": "book",
+    "available_for_borrowing": true
+  },
+  "2175f7bb-204e-4a13-aa00-c14939307e97": {
+    "id": "2175f7bb-204e-4a13-aa00-c14939307e97",
+    "name": "car magazine",
+    "author": "desmond",
+    "publication_date": "Wed Dec 12 2012",
+    "category": "magazine",
+    "available_for_borrowing": true
+  },
+  "d3f3f3e2-5f4a-4f1b- ninety9-9d6f5e4c3b2a": {
+    "id": "d3f3f3e2-5f4a-4f1b- ninety9-9d6f5e4c3b2a",
+    "name": "Inception",
+    "author": "Christopher Nolan",
+    "publication_date": "Thu Jul 16 2010",
+    "category": "film",
+    "available_for_borrowing": true
+  },
+  "a1b2c3d4-e5f6-7890-abcd-ef1234567890": {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "National Geographic",
+    "author": "Various",
+    "publication_date": "Mon Mar 1 2021",
+    "category": "magazine",
+    "available_for_borrowing": true
+  },
+  "f1e2d3c4-b5a6-7890-cdef-1234567890ab": {
+    "id": "f1e2d3c4-b5a6-7890-cdef-1234567890ab",
+    "name": "1984",
+    "author": "George Orwell",
+    "publication_date": "Thu Jun 8 1949",
+    "category": "book",
+    "available_for_borrowing": true
+  },
+  "9a8b7c6d-5e4f-3210-abcd-ef9876543210": {
+    "id": "9a8b7c6d-5e4f-3210-abcd-ef9876543210",
+    "name": "The Matrix",
+    "author": "The Wachowskis",
+    "publication_date": "Fri Mar 31 1999",
+    "category": "film",
     "available_for_borrowing": true
   }
 }
