@@ -157,5 +157,5 @@ class MainWindow(QWidget, Ui_main_window_widget):
         response = requests.delete('http://localhost:5000/delete_media', json={'id': media_id})
         print(f"Delete response: {response.json()}")
         self.search_by_name_line_edit.clear()
-        self.search_result_list.clear()
+        self.search_books()
         self._last_search_results = []
