@@ -56,11 +56,7 @@
           <widget class="QComboBox" name="filter_by_category_cmbx"/>
          </item>
          <item>
-          <widget class="QListView" name="available_lst">
-           <property name="cursor" stdset="0">
-            <cursorShape>IBeamCursor</cursorShape>
-           </property>
-          </widget>
+          <widget class="QListWidget" name="available_lst"/>
          </item>
         </layout>
        </item>

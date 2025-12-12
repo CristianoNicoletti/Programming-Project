@@ -1,4 +1,3 @@
-
 # Main PySide6 GUI window for the Library Management System
 import requests
 from PySide6.QtCore import Qt
@@ -30,6 +29,7 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self.available_for_borrowing_chkbx.setChecked(True)
         self.delete_btn.clicked.connect(self.delete_selected_search_result)
         self.search_result_list.itemSelectionChanged.connect(self.display_selected_search_result)
+        self.available_lst.itemSelectionChanged.connect(self.display_selected_available_media)
 
         # Store last search results for lookup
         self._last_search_results = []
@@ -45,6 +45,7 @@ class MainWindow(QWidget, Ui_main_window_widget):
         else:
             response = requests.get('http://localhost:5000/available_media')
         media_list = response.json()['media']
+        self._last_available_list = media_list  # Store for available list lookup
         self.display_media_list(media_list)
 
     def add_media(self):
@@ -79,15 +80,15 @@ class MainWindow(QWidget, Ui_main_window_widget):
 
     def display_media_list(self, media_list):
         """
-        Display a list of available media in the UI list view.
+        Display a list of available media in the UI list widget.
         """
-        model = QStandardItemModel()
+        self.available_lst.clear()
+        from PySide6.QtWidgets import QListWidgetItem
         for media in media_list:
             item_text = f"{media['name']} - {media['author']} ({media['category']})"
-            item = QStandardItem(item_text)
-            item.setData(media['id'], Qt.UserRole)
-            model.appendRow(item)
-        self.available_lst.setModel(model)
+            list_item = QListWidgetItem(item_text)
+            list_item.setData(Qt.UserRole, media['id'])
+            self.available_lst.addItem(list_item)
 
     def display_search_results(self, results):
         """
@@ -112,6 +113,27 @@ class MainWindow(QWidget, Ui_main_window_widget):
         selected_item = selected_items[0]
         media_id = selected_item.data(Qt.UserRole)
         media = next((m for m in self._last_search_results if m['id'] == media_id), None)
+        if media:
+            details = (
+                f"Name: {media['name']}\n"
+                f"Author: {media['author']}\n"
+                f"Publication Date: {media['publication_date']}\n"
+                f"Category: {media['category']}\n"
+                f"Available for Borrowing: {media['available_for_borrowing']}\n"
+                f"ID: {media['id']}"
+            )
+            QMessageBox.information(self, "Media Details", details)
+
+    def display_selected_available_media(self):
+        """
+        Show details of the selected available media item.
+        """
+        selected_items = self.available_lst.selectedItems()
+        if not selected_items:
+            return
+        selected_item = selected_items[0]
+        media_id = selected_item.data(Qt.UserRole)
+        media = next((m for m in getattr(self, '_last_available_list', []) if m['id'] == media_id), None)
         if media:
             details = (
                 f"Name: {media['name']}\n"

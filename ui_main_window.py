@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDateEdit,
     QDateTimeEdit, QHBoxLayout, QLabel, QLineEdit,
-    QListView, QListWidget, QListWidgetItem, QPushButton,
-    QSizePolicy, QTabWidget, QVBoxLayout, QWidget)
+    QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
+    QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_main_window_widget(object):
     def setupUi(self, main_window_widget):
@@ -56,9 +56,8 @@ class Ui_main_window_widget(object):
 
         self.browse_tab_verticallayout.addWidget(self.filter_by_category_cmbx)
 
-        self.available_lst = QListView(self.tab)
+        self.available_lst = QListWidget(self.tab)
         self.available_lst.setObjectName(u"available_lst")
-        self.available_lst.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.IBeamCursor))
 
         self.browse_tab_verticallayout.addWidget(self.available_lst)
 
