@@ -1,3 +1,5 @@
+
+# Main PySide6 GUI window for the Library Management System
 import requests
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QWidget, QMessageBox
@@ -5,15 +7,22 @@ from PySide6.QtGui import QStandardItemModel, QStandardItem
 from ui_main_window import Ui_main_window_widget
 from media_item import Category
 
+
 class MainWindow(QWidget, Ui_main_window_widget):
+    """
+    Main application window for the Library Management System GUI.
+    Handles user interactions, communicates with the backend API, and updates the UI.
+    """
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.setWindowTitle("Library Management System")
+
+        # Connect UI buttons to their respective handler methods
         self.refresh_available_btn.clicked.connect(self.refresh_available_books)
         self.add_media_btn.clicked.connect(self.add_media)
         self.search_btn.clicked.connect(self.search_books)
-        
+
         # Populate category comboboxes with enum values
         categories = [cat.value for cat in Category]
         self.category_cmbx.addItems(categories)
@@ -26,6 +35,9 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self._last_search_results = []
 
     def refresh_available_books(self):
+        """
+        Refresh the list of available media, optionally filtered by category.
+        """
         print("refresh_available_books called")
         category = self.filter_by_category_cmbx.currentText()
         if category and category != "All Categories":
@@ -36,6 +48,9 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self.display_media_list(media_list)
 
     def add_media(self):
+        """
+        Collect data from the form and send a request to add a new media item.
+        """
         print(f"add_media called - Name: {self.name_line_edit.text()}, Author: {self.author_line_edit.text()}, Date: {self.publication_date_date_edit.date().toString()}, Category: {self.category_cmbx.currentText()}, Available: {self.available_for_borrowing_chkbx.isChecked()}")
         data = {
             'name': self.name_line_edit.text(),
@@ -52,6 +67,9 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self.refresh_available_books()
 
     def search_books(self):
+        """
+        Search for media items by name and display the results.
+        """
         search_term = self.search_by_name_line_edit.text()
         print(f"search_books called - Search term: {search_term}")
         response = requests.get(f'http://localhost:5000/search?name={search_term}')
@@ -60,6 +78,9 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self.display_search_results(results)
 
     def display_media_list(self, media_list):
+        """
+        Display a list of available media in the UI list view.
+        """
         model = QStandardItemModel()
         for media in media_list:
             item_text = f"{media['name']} - {media['author']} ({media['category']})"
@@ -69,23 +90,27 @@ class MainWindow(QWidget, Ui_main_window_widget):
         self.available_lst.setModel(model)
 
     def display_search_results(self, results):
+        """
+        Display search results in the UI list widget.
+        """
         self.search_result_list.clear()
         for media in results:
             item_text = f"{media['name']} - {media['author']} ({media['category']})"
             item = QStandardItem(item_text)
-            # QListWidgetItem instead of QStandardItem for QListWidget
             from PySide6.QtWidgets import QListWidgetItem
             list_item = QListWidgetItem(item_text)
             list_item.setData(Qt.UserRole, media['id'])
             self.search_result_list.addItem(list_item)
 
     def display_selected_search_result(self):
+        """
+        Show details of the selected search result in a message box.
+        """
         selected_items = self.search_result_list.selectedItems()
         if not selected_items:
             return
         selected_item = selected_items[0]
         media_id = selected_item.data(Qt.UserRole)
-        # Find media in last search results
         media = next((m for m in self._last_search_results if m['id'] == media_id), None)
         if media:
             details = (
@@ -99,6 +124,9 @@ class MainWindow(QWidget, Ui_main_window_widget):
             QMessageBox.information(self, "Media Details", details)
 
     def delete_selected_search_result(self):
+        """
+        Delete the selected media item from the search results via the backend API.
+        """
         selected_items = self.search_result_list.selectedItems()
         if not selected_items:
             return

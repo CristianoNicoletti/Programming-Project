@@ -1,7 +1,12 @@
+
+# Test for category combobox population in the frontend
 from main_window import MainWindow
 from PySide6.QtWidgets import QApplication
 
 def test_category_combobox_populated():
+    """
+    Test that the category combobox contains all expected categories.
+    """
     app = QApplication([])
     window = MainWindow()
     categories = [window.category_cmbx.itemText(i) for i in range(window.category_cmbx.count())]

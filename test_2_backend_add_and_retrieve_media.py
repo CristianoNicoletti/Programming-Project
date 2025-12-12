@@ -1,6 +1,11 @@
+
+# Test for adding and retrieving a media item via the backend API
 import requests
 
 def test_add_and_get_media():
+    """
+    Test that a media item can be added and then retrieved from /available_media.
+    """
     # Add a new media item
     data = {
         "name": "Test Book",
