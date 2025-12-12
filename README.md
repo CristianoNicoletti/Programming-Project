@@ -1,7 +1,7 @@
 
 # Library Management System
 
-This project is a simple Library Management System featuring a graphical user interface (GUI) built with PySide6 (Qt for Python) and a backend RESTful API built with Flask. It allows users to add, search, view, and delete media items (books, films, magazines) in a persistent library database.
+This project is a Library Management System using a GUI built with PySide6 and a backend RESTful API built with Flask. It allows users to add, search, view, and delete media items (books, films, magazines) in a persistent library database stored on a JSON file.
 
 ## Features
 
@@ -10,7 +10,6 @@ This project is a simple Library Management System featuring a graphical user in
 - Filter and view available media by category
 - Delete media items
 - Persistent storage of library state in a JSON file
-- Modern GUI using PySide6
 - RESTful backend API using Flask
 - Automated tests for backend and frontend functionality
 
