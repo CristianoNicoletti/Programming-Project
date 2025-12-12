@@ -104,8 +104,8 @@ class Ui_main_window_widget(object):
 
         self.publication_date_date_edit = QDateEdit(self.layoutWidget_2)
         self.publication_date_date_edit.setObjectName(u"publication_date_date_edit")
-        self.publication_date_date_edit.setMaximumDateTime(QDateTime(QDate(2100, 12, 31), QTime(19, 59, 59)))
-        self.publication_date_date_edit.setMinimumDateTime(QDateTime(QDate(1752, 9, 14), QTime(22, 0, 0)))
+        self.publication_date_date_edit.setMaximumDateTime(QDateTime(QDate(2100, 12, 31), QTime(17, 59, 59)))
+        self.publication_date_date_edit.setMinimumDateTime(QDateTime(QDate(1752, 9, 14), QTime(20, 0, 0)))
         self.publication_date_date_edit.setMinimumDate(QDate(1752, 9, 14))
         self.publication_date_date_edit.setCurrentSection(QDateTimeEdit.Section.YearSection)
         self.publication_date_date_edit.setCalendarPopup(True)
@@ -174,15 +174,15 @@ class Ui_main_window_widget(object):
 
         self.search_result_list = QListWidget(self.tab_3)
         self.search_result_list.setObjectName(u"search_result_list")
-        self.search_result_list.setGeometry(QRect(20, 90, 741, 51))
+        self.search_result_list.setGeometry(QRect(20, 90, 741, 371))
         self.delete_btn = QPushButton(self.tab_3)
         self.delete_btn.setObjectName(u"delete_btn")
-        self.delete_btn.setGeometry(QRect(680, 160, 75, 24))
+        self.delete_btn.setGeometry(QRect(680, 480, 75, 24))
         self.tab_widget.addTab(self.tab_3, "")
 
         self.retranslateUi(main_window_widget)
 
-        self.tab_widget.setCurrentIndex(2)
+        self.tab_widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(main_window_widget)

@@ -48,7 +48,7 @@ class MainWindow(QWidget, Ui_main_window_widget):
         print(f"Media added: {response.json()}")
         self.name_line_edit.clear()
         self.author_line_edit.clear()
-        self.available_for_borrowing_chkbx.setChecked(False)
+        self.available_for_borrowing_chkbx.setChecked(True)
         self.refresh_available_books()
 
     def search_books(self):

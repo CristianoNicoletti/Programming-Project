@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -127,7 +127,7 @@
        <widget class="QDateEdit" name="publication_date_date_edit">
         <property name="maximumDateTime">
          <datetime>
-          <hour>19</hour>
+          <hour>17</hour>
           <minute>59</minute>
           <second>59</second>
           <year>2100</year>
@@ -137,7 +137,7 @@
         </property>
         <property name="minimumDateTime">
          <datetime>
-          <hour>22</hour>
+          <hour>20</hour>
           <minute>0</minute>
           <second>0</second>
           <year>1752</year>
@@ -248,7 +248,7 @@
        <x>20</x>
        <y>90</y>
        <width>741</width>
-       <height>51</height>
+       <height>371</height>
       </rect>
      </property>
     </widget>
@@ -256,7 +256,7 @@
      <property name="geometry">
       <rect>
        <x>680</x>
-       <y>160</y>
+       <y>480</y>
        <width>75</width>
        <height>24</height>
       </rect>
